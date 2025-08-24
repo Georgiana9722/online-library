@@ -1,0 +1,7 @@
+CREATE TABLE loan (
+    id SERIAL PRIMARY KEY,
+    user_id INTEGER REFERENCES "user"(id),
+    book_id INTEGER REFERENCES book(id),
+    loan_date DATE NOT NULL DEFAULT CURRENT_DATE,
+    returned BOOLEAN NOT NULL DEFAULT FALSE
+);
